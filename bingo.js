@@ -34,12 +34,12 @@ console.log(POSSIBLE_ITEMS);
 // To identify each user uniquely, we store the time they first accessed the page as
 // a cookie. Since it doesn't need to be absolutely unique, and the chance of collision
 // is very small, this is good enough for Literific work.
-if (getCookie("cheatersAreAssholes") == "") {
+if (getCookie("accessCookie") == "") {
 	var d = new Date();
-	setCookie("cheatersAreAssholes", d.getTime(), 365);
-	console.log("Attempted to set cookie. Value is: " + getCookie("cheatersAreAssholes"));
+	setCookie("accessCookie", d.getTime(), 365);
+	console.log("Attempted to set cookie. Value is: " + getCookie("accessCookie"));
 } else {
-	console.log("Cookie Present. Value is: " + getCookie("cheatersAreAssholes"));
+	console.log("Cookie Present. Value is: " + getCookie("accessCookie"));
 }
 
 function crossOut(canvas) {
@@ -47,7 +47,7 @@ function crossOut(canvas) {
 	var ctx = canvas.getContext("2d");
 	ctx.moveTo(0, 0);
 	ctx.lineTo(canvas.width, canvas.height);
-	ctx.strokeStyle = "#FFFFFF";
+	ctx.strokeStyle = canvas.id=="canvas 00" ? "F7F706" : "#FFFFFF";
 	ctx.stroke();
 	ctx.moveTo(0, canvas.height);
 	ctx.lineTo(canvas.width, 0);
@@ -70,7 +70,7 @@ function displayBingoSheet(itemArray) {
 function generateBingoSheet() {
 	// The rng's seed is the current day and the user's identifier.
 	// This means each user gets one sheet per day.
-	var rngSeed = getDaysSinceEpoch() + getCookie("cheatersAreAssholes");
+	var rngSeed = getDaysSinceEpoch() + getCookie("accessCookie");
 	var rng = new Random(rngSeed);
 
 	var allItems = POSSIBLE_ITEMS.slice(0);
