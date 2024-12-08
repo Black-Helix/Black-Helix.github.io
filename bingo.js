@@ -42,15 +42,47 @@ if (getCookie("accessCookie") == "") {
 	console.log("Cookie Present. Value is: " + getCookie("accessCookie"));
 }
 
-function crossOut(canvas) {
+function crossCheck(canvas) {
 	debugger;
+	canvas.marked ? clearCross(canvas) : crossOut(canvas)
+
+}
+
+function crossOut(canvas) {
+	// gets details of current square
 	var ctx = canvas.getContext("2d");
+	// sets start point of drawn line (top left corner)
 	ctx.moveTo(0, 0);
+	// sets end point of drawn line (bottom right corner)
 	ctx.lineTo(canvas.width, canvas.height);
-	ctx.strokeStyle = canvas.id=="canvas 00" ? "7cfc00" : "#FFFFFF";
+	// sets stroke colour
+	ctx.strokeStyle = canvas.id=="canvas 00" ? "#7cfc00" : "#ff1493";
+	// draws line
 	ctx.stroke();
+	// sets start point of drawn line (bottom left corner)
 	ctx.moveTo(0, canvas.height);
+	// sets end point of drawn line (top right corner)
 	ctx.lineTo(canvas.width, 0);
+	// draws line
+	ctx.stroke();
+}
+
+function clearCross(canvas) {
+	// gets details of current square
+	var ctx = canvas.getContext("2d");
+	// sets start point of drawn line (top left corner)
+	ctx.moveTo(0, 0);
+	// sets end point of drawn line (bottom right corner)
+	ctx.lineTo(canvas.width, canvas.height);
+	// sets stroke colour
+	ctx.strokeStyle = canvas.id=="canvas 00" ? "#ff1493" : "#7cfc00";
+	// draws line
+	ctx.stroke();
+	// sets start point of drawn line (bottom left corner)
+	ctx.moveTo(0, canvas.height);
+	// sets end point of drawn line (top right corner)
+	ctx.lineTo(canvas.width, 0);
+	// draws line
 	ctx.stroke();
 }
 
