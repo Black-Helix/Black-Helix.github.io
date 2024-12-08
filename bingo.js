@@ -65,6 +65,10 @@ function crossOut(canvas) {
 	ctx.lineTo(canvas.width, 0);
 	// draws line
 	ctx.stroke();
+	// set marked status
+	canvas.marked = "true";
+	// test
+	return canvas;
 }
 
 function clearCross(canvas) {
@@ -84,6 +88,10 @@ function clearCross(canvas) {
 	ctx.lineTo(canvas.width, 0);
 	// draws line
 	ctx.stroke();
+	// set marked status
+	canvas.marked = "false";
+	// test
+	return canvas;
 }
 
 function displayBingoSheet(itemArray) {
