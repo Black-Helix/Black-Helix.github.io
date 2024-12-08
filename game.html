@@ -34,9 +34,10 @@
   <div class="section">
     <div class="bingoContainer">
       <center>
+        <img id="bingo-stamp" src="https://literific.files.wordpress.com/2017/12/v2-mk5g.png" onclick="this.style.visibility='hidden';"/>
         <div class="bingoRow">
           <canvas id="canvas 00" width="200" height="200" style="border:1px solid #ffffff;" class="bCol"
-            onclick="crossCheck(this)"></canvas>
+            onclick="document.getElementById('other-image').style.visibility='visible'"></canvas>
           <canvas id="canvas 01" width="200" height="200" style="border:1px solid #ffffff;" class="bCol"
             onclick="crossOut(this)"></canvas>
           <canvas id="canvas 02" width="200" height="200" style="border:1px solid #ffffff;" class="bCol"
@@ -103,7 +104,7 @@
   <CENTER>
     <div class="bottomcredits">
 
-      <span style="font-size:3vh"> <i> Literific Bingo </i></span> <br />Dev Ver 0.8 <br />Revived by Mr Calvin Black,
+      <span style="font-size:3vh"> <i> Literific Bingo </i></span> <br />Dev Ver 0.9 <br />Revived by Mr Calvin Black,
       Web App by Mr Matthew Sullivan, Design by Mr Matthew Bradley
     </div>
     <script>
