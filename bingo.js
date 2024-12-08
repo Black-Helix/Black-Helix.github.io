@@ -47,7 +47,7 @@ function crossOut(canvas) {
 	var ctx = canvas.getContext("2d");
 	ctx.moveTo(0, 0);
 	ctx.lineTo(canvas.width, canvas.height);
-	ctx.strokeStyle = canvas.id=="canvas 00" ? "F7F706" : "#FFFFFF";
+	ctx.strokeStyle = canvas.id=="canvas 00" ? "7cfc00" : "#FFFFFF";
 	ctx.stroke();
 	ctx.moveTo(0, canvas.height);
 	ctx.lineTo(canvas.width, 0);
