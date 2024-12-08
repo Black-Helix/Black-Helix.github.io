@@ -102,8 +102,8 @@ a:hover {
   position: fixed;
   top: 0%;
   left: 0%;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
 }
 
 .bottomcredits {
@@ -113,4 +113,8 @@ a:hover {
   width: 100%;
   font-size: 2vh;
   text-align: center;
+}
+
+.overlays{
+  position:absolute;
 }

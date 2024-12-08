@@ -43,8 +43,37 @@ if (getCookie("accessCookie") == "") {
 }
 
 function crossCheck(canvas) {
-	debugger;
-	canvas.marked ? clearCross(canvas) : crossOut(canvas)
+
+	//var ctx = canvas.getContext("2d");
+
+    margin = 20;
+
+    l = canvas.offsetLeft;
+    t = canvas.offsetTop;
+    w = canvas.width;
+    h = canvas.height;
+
+    // Location inside the image
+    offX = parseInt(Math.random() * w);
+    offY = parseInt(Math.random() * h);
+
+    if(offX > margin) offX -= margin;
+    if(offY > margin) offY -= margin;
+
+    l += offX;
+    t += offY;
+
+    var newImage = document.createElement("img");
+    newImage.setAttribute('src', 'godkinpng.png');
+    newImage.setAttribute('class', 'overlays');
+    newImage.style.left = l + "px";
+    newImage.style.top = t + "px";
+    document.body.appendChild(newImage);
+	
+	
+	
+	//debugger;
+	//canvas.marked ? clearCross(canvas) : crossOut(canvas)
 
 }
 
