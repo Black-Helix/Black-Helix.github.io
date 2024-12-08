@@ -64,10 +64,10 @@ function crossCheck(canvas) {
     t += offY;
 
     var newImage = document.createElement("img");
-    newImage.setAttribute('src', 'godkinpng.png');
+    newImage.setAttribute('src', 'godkinhead.png');
     newImage.setAttribute('class', 'overlays');
-    newImage.style.left = l + "px";
-    newImage.style.top = t + "px";
+    newImage.style.left = "0px";
+    newImage.style.top = "0px";
     document.body.appendChild(newImage);
 	
 	
