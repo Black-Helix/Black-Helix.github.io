@@ -66,7 +66,7 @@ function crossOut(canvas) {
 	// draws line
 	ctx.stroke();
 	// set marked status
-	canvas.marked = "true";
+	canvas.marked = true;
 	// test
 	return canvas;
 }
@@ -77,7 +77,7 @@ function clearCross(canvas) {
 	// sets start point of drawn line (top left corner)
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	// set marked status
-	canvas.marked = "false";
+	canvas.marked = false;
 	// test
 	return canvas;
 }
