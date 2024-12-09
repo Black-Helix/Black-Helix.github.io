@@ -66,7 +66,7 @@ function crossCheck(canvas) {
 	newImage.setAttribute('id', id);
 	newImage.setAttribute('src', 'godkinhead.png');
 	newImage.setAttribute('class', 'overlays');
-	newImage.setAttribute('onclick', crossCheckX(id));
+	newImage.setAttribute('onclick', "this.style.visibility = 'hidden'");
 	newImage.style.left = canvasLeftCoord;
 	newImage.style.top = canvasTopCoord;
 	newImage.style.width = w*0.615;
