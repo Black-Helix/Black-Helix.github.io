@@ -42,6 +42,21 @@ if (getCookie("accessCookie") == "") {
 	console.log("Cookie Present. Value is: " + getCookie("accessCookie"));
 }
 
+function crossCheckX(canvas) {
+
+	//var ctx = canvas.getContext("2d");
+	id = canvas.id + "_cross"
+
+	if (canvas.marked){
+
+		const element = document.getElementById(id);
+		document.getElementById(element).outerHTML = "";
+
+		canvas.marked==false;
+		return canvas
+	}
+}
+
 function crossCheck(canvas) {
 
 	//var ctx = canvas.getContext("2d");
@@ -67,6 +82,7 @@ function crossCheck(canvas) {
 		newImage.setAttribute('id', id);
 		newImage.setAttribute('src', 'godkinhead.png');
 		newImage.setAttribute('class', 'overlays');
+		newImage.setAttribute('onclick', crossCheckX(canvas));
 		newImage.style.left = canvasLeftCoord;
 		newImage.style.top = canvasTopCoord;
 		newImage.style.width = w;
