@@ -129,7 +129,10 @@ a:hover {
 }
 
 .overlays{
-  position:absolute;
+  position: absolute;
   max-width: 16vw;
   max-height: 16vh;
+  margin: auto;
+  padding: 0px;
+  cursor: pointer;
 }
