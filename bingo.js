@@ -52,8 +52,8 @@ function crossOut(canvas) {
 	newImage.setAttribute('src', 'godkinhead.png');
 	newImage.setAttribute('class', 'overlays');
 	newImage.setAttribute('onclick', "this.remove()");
-	newImage.style.left = canvasLeftCoord;
-	newImage.style.top = canvasTopCoord;
+	newImage.style.left = canvasLeftCoord + "px";
+	newImage.style.top = canvasTopCoord + "px";
 	newImage.style.opacity = "0.5";
 	document.body.appendChild(newImage);
 	
