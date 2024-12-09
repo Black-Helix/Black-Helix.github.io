@@ -46,7 +46,7 @@ function crossCheck(canvas) {
 
 	//var ctx = canvas.getContext("2d");
 
-	if (canvas.marked==false){
+	if (canvas.marked!=true){
 
 	id = canvas.id + "_cross"
 
