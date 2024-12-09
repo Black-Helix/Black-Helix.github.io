@@ -42,19 +42,7 @@ if (getCookie("accessCookie") == "") {
 	console.log("Cookie Present. Value is: " + getCookie("accessCookie"));
 }
 
-function crossCheckX(id) {
-
-	const element = document.getElementById(id);
-	element.remove();
-	
-	return canvas
-}
-
-
-function crossCheck(canvas) {
-
-	//var ctx = canvas.getContext("2d");
-	id = canvas.id + "_cross"
+function crossOut(canvas) {
 
 	canvasRect = canvas.getBoundingClientRect();
 	canvasLeftCoord = canvasRect.left;
@@ -63,7 +51,6 @@ function crossCheck(canvas) {
 	h = canvas.height;
 
 	var newImage = document.createElement("img");
-	newImage.setAttribute('id', id);
 	newImage.setAttribute('src', 'godkinhead.png');
 	newImage.setAttribute('class', 'overlays');
 	newImage.setAttribute('onclick', "this.style.visibility = 'hidden'");
@@ -73,47 +60,7 @@ function crossCheck(canvas) {
 	newImage.style.height = h;
 	newImage.style.opacity = "0.5";
 	document.body.appendChild(newImage);
-	canvas.marked==true;
-	return canvas
-
-
-	//debugger;
-	//canvas.marked ? clearCross(canvas) : crossOut(canvas)
-
-}
-
-function crossOut(canvas) {
-	// gets details of current square
-	var ctx = canvas.getContext("2d");
-	// sets start point of drawn line (top left corner)
-	ctx.moveTo(0, 0);
-	// sets end point of drawn line (bottom right corner)
-	ctx.lineTo(canvas.width, canvas.height);
-	// sets stroke colour
-	ctx.strokeStyle = canvas.id=="canvas 00" ? "#7cfc00" : "#ff1493";
-	// draws line
-	ctx.stroke();
-	// sets start point of drawn line (bottom left corner)
-	ctx.moveTo(0, canvas.height);
-	// sets end point of drawn line (top right corner)
-	ctx.lineTo(canvas.width, 0);
-	// draws line
-	ctx.stroke();
-	// set marked status
-	canvas.marked = true;
-	// test
-	return canvas;
-}
-
-function clearCross(canvas) {
-	// gets details of current square
-	var ctx = canvas.getContext("2d");
-	// sets start point of drawn line (top left corner)
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	// set marked status
-	canvas.marked = false;
-	// test
-	return canvas;
+	
 }
 
 function displayBingoSheet(itemArray) {

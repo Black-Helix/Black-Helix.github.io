@@ -130,4 +130,6 @@ a:hover {
 
 .overlays{
   position:absolute;
+  max-width: 16vw;
+  max-height: 16vh;
 }
