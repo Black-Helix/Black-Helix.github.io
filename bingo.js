@@ -69,7 +69,7 @@ function crossCheck(canvas) {
 	newImage.setAttribute('onclick', "this.style.visibility = 'hidden'");
 	newImage.style.left = canvasLeftCoord;
 	newImage.style.top = canvasTopCoord;
-	newImage.style.width = w*0.615;
+	newImage.style.width = w;
 	newImage.style.height = h;
 	newImage.style.opacity = "0.5";
 	document.body.appendChild(newImage);
