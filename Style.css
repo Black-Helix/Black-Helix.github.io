@@ -62,7 +62,7 @@ a:hover {
   height: 70%;
   width: 100%;
   top: 10%;
-  background-image: "logooutline.png";
+  background-image: url("logooutline.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -130,4 +130,6 @@ a:hover {
 
 .overlays{
   position:absolute;
+  width: auto;
+  height: auto;
 }
