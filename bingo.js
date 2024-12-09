@@ -46,19 +46,14 @@ function crossOut(canvas) {
 
 	canvasRect = canvas.getBoundingClientRect();
 	canvasLeftCoord = canvasRect.left;
-	canvasTopCoord  = canvasRect.top ;
-	w = canvas.width;
-	h = canvas.height;
+	canvasTopCoord  = canvasRect.top;
 
 	var newImage = document.createElement("img");
 	newImage.setAttribute('src', 'godkinhead.png');
 	newImage.setAttribute('class', 'overlays');
 	newImage.setAttribute('onclick', "this.remove()");
-	//newImage.setAttribute('onclick', "this.style.visibility = 'hidden'");
 	newImage.style.left = canvasLeftCoord;
 	newImage.style.top = canvasTopCoord;
-	newImage.style.width = w;
-	newImage.style.height = h;
 	newImage.style.opacity = "0.5";
 	document.body.appendChild(newImage);
 	
