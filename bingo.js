@@ -45,35 +45,36 @@ if (getCookie("accessCookie") == "") {
 function crossCheck(canvas) {
 
 	//var ctx = canvas.getContext("2d");
-
-	if (canvas.marked!=true){
-
 	id = canvas.id + "_cross"
-
-    w = canvas.width;
-    h = canvas.height;
-
-    var newImage = document.createElement("img");
-	newImage.setAttribute('id', id);
-    newImage.setAttribute('src', 'godkinhead.png');
-    newImage.setAttribute('class', 'overlays');
-    newImage.style.left = "0px";
-    newImage.style.top = "0px";
-	newImage.style.width = w;
-	newImage.style.height = h;
-    document.body.appendChild(newImage);
-	canvas.marked==true;
-	return canvas
-	}
 	
-	if (canvas.marked==true){
-		id = canvas.id + "_cross"
+	if (canvas.marked){
 
 		const element = document.getElementById(id);
 		element.remove();
 
 		canvas.marked==false;
 		return canvas
+	
+	} else {
+
+		canvasRect = canvas.getBoundingClientRect();
+		canvasLeftCoord = canvasRect.left;
+		canvasTopCoord  = canvasRect.top ;
+		w = canvas.width;
+		h = canvas.height;
+
+		var newImage = document.createElement("img");
+		newImage.setAttribute('id', id);
+		newImage.setAttribute('src', 'godkinhead.png');
+		newImage.setAttribute('class', 'overlays');
+		newImage.style.left = canvasLeftCoord;
+		newImage.style.top = canvasTopCoord;
+		newImage.style.width = w;
+		newImage.style.height = h;
+		document.body.appendChild(newImage);
+		canvas.marked==true;
+		return canvas
+
 	}
 
 	//debugger;
