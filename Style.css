@@ -55,6 +55,19 @@ a:hover {
   display: none;
 }
 
+.logooutline {
+  vertical-align: middle;
+  text-align: center;
+  position: absolute;
+  height: 70%;
+  width: 100%;
+  top: 10%;
+  background-image: "logooutline.png";
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .logo {
   vertical-align: middle;
   text-align: center;

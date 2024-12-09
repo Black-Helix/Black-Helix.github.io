@@ -46,11 +46,11 @@ function crossCheck(canvas) {
 
 	//var ctx = canvas.getContext("2d");
 	id = canvas.id + "_cross"
-	
+
 	if (canvas.marked){
 
 		const element = document.getElementById(id);
-		element.remove();
+		document.getElementById(element).outerHTML = "";
 
 		canvas.marked==false;
 		return canvas
@@ -71,6 +71,7 @@ function crossCheck(canvas) {
 		newImage.style.top = canvasTopCoord;
 		newImage.style.width = w;
 		newImage.style.height = h;
+		newImage.style.opacity = "0.5";
 		document.body.appendChild(newImage);
 		canvas.marked==true;
 		return canvas
