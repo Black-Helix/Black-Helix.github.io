@@ -42,56 +42,40 @@ if (getCookie("accessCookie") == "") {
 	console.log("Cookie Present. Value is: " + getCookie("accessCookie"));
 }
 
-function crossCheckX(canvas) {
+function crossCheckX(id) {
 
-	//var ctx = canvas.getContext("2d");
-	id = canvas.id + "_cross"
-
-	if (canvas.marked){
-
-		const element = document.getElementById(id);
-		document.getElementById(element).outerHTML = "";
-
-		canvas.marked==false;
-		return canvas
-	}
+	const element = document.getElementById(id);
+	element.remove();
+	
+	return canvas
 }
+
 
 function crossCheck(canvas) {
 
 	//var ctx = canvas.getContext("2d");
 	id = canvas.id + "_cross"
 
-	if (canvas.marked){
+	canvasRect = canvas.getBoundingClientRect();
+	canvasLeftCoord = canvasRect.left;
+	canvasTopCoord  = canvasRect.top ;
+	w = canvas.width;
+	h = canvas.height;
 
-		document.getElementById(document.getElementById(id)).outerHTML = "";
+	var newImage = document.createElement("img");
+	newImage.setAttribute('id', id);
+	newImage.setAttribute('src', 'godkinhead.png');
+	newImage.setAttribute('class', 'overlays');
+	newImage.setAttribute('onclick', crossCheckX(id));
+	newImage.style.left = canvasLeftCoord;
+	newImage.style.top = canvasTopCoord;
+	newImage.style.width = w*0.615;
+	newImage.style.height = h;
+	newImage.style.opacity = "0.5";
+	document.body.appendChild(newImage);
+	canvas.marked==true;
+	return canvas
 
-		canvas.marked==false;
-		return canvas
-	
-	} else {
-
-		canvasRect = canvas.getBoundingClientRect();
-		canvasLeftCoord = canvasRect.left;
-		canvasTopCoord  = canvasRect.top ;
-		w = canvas.width;
-		h = canvas.height;
-
-		var newImage = document.createElement("img");
-		newImage.setAttribute('id', id);
-		newImage.setAttribute('src', 'godkinhead.png');
-		newImage.setAttribute('class', 'overlays');
-		newImage.setAttribute('onclick', crossCheckX(canvas));
-		newImage.style.left = canvasLeftCoord;
-		newImage.style.top = canvasTopCoord;
-		newImage.style.width = w;
-		newImage.style.height = h;
-		newImage.style.opacity = "0.5";
-		document.body.appendChild(newImage);
-		canvas.marked==true;
-		return canvas
-
-	}
 
 	//debugger;
 	//canvas.marked ? clearCross(canvas) : crossOut(canvas)
