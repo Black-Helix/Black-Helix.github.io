@@ -64,8 +64,7 @@ function crossCheck(canvas) {
 
 	if (canvas.marked){
 
-		const element = document.getElementById(id);
-		document.getElementById(element).outerHTML = "";
+		document.getElementById(document.getElementById(id)).outerHTML = "";
 
 		canvas.marked==false;
 		return canvas
