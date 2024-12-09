@@ -46,32 +46,36 @@ function crossCheck(canvas) {
 
 	//var ctx = canvas.getContext("2d");
 
-    margin = 20;
+	if (canvas.marked==false){
 
-    l = canvas.offsetLeft;
-    t = canvas.offsetTop;
+	id = canvas.id + "_cross"
+
     w = canvas.width;
     h = canvas.height;
 
-    // Location inside the image
-    offX = parseInt(Math.random() * w);
-    offY = parseInt(Math.random() * h);
-
-    if(offX > margin) offX -= margin;
-    if(offY > margin) offY -= margin;
-
-    l += offX;
-    t += offY;
-
     var newImage = document.createElement("img");
+	newImage.setAttribute('id', id);
     newImage.setAttribute('src', 'godkinhead.png');
     newImage.setAttribute('class', 'overlays');
     newImage.style.left = "0px";
     newImage.style.top = "0px";
+	newImage.style.width = w;
+	newImage.style.height = h;
     document.body.appendChild(newImage);
+	canvas.marked==true;
+	return canvas
+	}
 	
-	
-	
+	if (canvas.marked==true){
+		id = canvas.id + "_cross"
+
+		const element = document.getElementById(id);
+		element.remove();
+
+		canvas.marked==false;
+		return canvas
+	}
+
 	//debugger;
 	//canvas.marked ? clearCross(canvas) : crossOut(canvas)
 
