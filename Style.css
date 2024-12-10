@@ -9,7 +9,7 @@ html {
 
 body {
   margin: 0;
-  background-image: linear-gradient(rgba(46,51,106,1), rgba(19,80,149,1));
+  /*background-image: linear-gradient(rgba(46,51,106,1), rgba(19,80,149,1));*/
   padding: 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -112,6 +112,7 @@ a:hover {
 .col-md-12 {}
 
 #bg {
+  background-image: linear-gradient(rgba(46,51,106,1), rgba(19,80,149,1));
   position: fixed; 
   top: -50%; 
   left: -50%; 
