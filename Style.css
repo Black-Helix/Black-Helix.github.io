@@ -126,11 +126,8 @@ a:hover {
   left: 0; 
   right: 0; 
   bottom: 3vh; 
-  margin: auto; 
-  min-width: 50%;
-  min-height: 50%;
-  width: 100vw;
-  height: 100vh;
+  margin: auto;
+  object-fit: cover;
 }
 
 .bottomcredits {
