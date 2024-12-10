@@ -9,9 +9,8 @@ html {
 
 body {
   margin: 0;
-  background-color: #2e347c;
+  background-image: linear-gradient(rgba(46,51,106,1), rgba(19,80,149,1));
   padding: 0;
-  background-size: fill;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
