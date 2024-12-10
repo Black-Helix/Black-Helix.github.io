@@ -128,6 +128,7 @@ a:hover {
   bottom: 3vh; 
   margin: auto;
   object-fit: cover;
+  object-position: center;
 }
 
 .bottomcredits {
