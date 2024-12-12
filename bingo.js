@@ -72,41 +72,41 @@ function crossOut(canvas) {
 
 		newImage.style.filter = "invert(1)";
 
-		for (coord in Object.keys(horcounter)){
-			if (horcounter[coord] == 5) {
-				for (i = 0; i < 5; i++) {
-					document.getElementById(coord + i).style.filter = "invert(1)";
-				}
-			}
+		// for (coord in Object.keys(horcounter)){
+		// 	if (horcounter[coord] == 5) {
+		// 		for (i = 0; i < 5; i++) {
+		// 			document.getElementById(coord + i).style.filter = "invert(1)";
+		// 		}
+		// 	}
 			
-		}
+		// }
 
-		for (coord in Object.keys(vercounter)){
-			if (vercounter[coord] == 5) {
-				for (let i = 0; i < 5; i++) {
-					var stamp = document.getElementById(coord + i);
-					stamp.style.filter = "invert(1)";
-					document.body.appendChild(stamp);
-				}
-			}
+		// for (coord in Object.keys(vercounter)){
+		// 	if (vercounter[coord] == 5) {
+		// 		for (let i = 0; i < 5; i++) {
+		// 			var stamp = document.getElementById(coord + i);
+		// 			stamp.style.filter = "invert(1)";
+		// 			document.body.appendChild(stamp);
+		// 		}
+		// 	}
 			
-		}
+		// }
 
-		if (diacount1==5){
-			for (let coord of diagids1){
-				var stamp = document.getElementById(coord);
-				stamp.style.filter = "invert(1)";
-				document.body.appendChild(stamp);
-			}
-		}
+		// if (diacount1==5){
+		// 	for (let coord of diagids1){
+		// 		var stamp = document.getElementById(coord);
+		// 		stamp.style.filter = "invert(1)";
+		// 		document.body.appendChild(stamp);
+		// 	}
+		// }
 
-		if (diacount2==5){
-			for (let coord of diagids2){
-				var stamp = document.getElementById(coord);
-				stamp.style.filter = "invert(1)";
-				document.body.appendChild(stamp);
-			}
-		}
+		// if (diacount2==5){
+		// 	for (let coord of diagids2){
+		// 		var stamp = document.getElementById(coord);
+		// 		stamp.style.filter = "invert(1)";
+		// 		document.body.appendChild(stamp);
+		// 	}
+		// }
 
 	} 
 	// else {
@@ -172,7 +172,8 @@ function lineChecker(stamp_array) {
 
 	bingo = Object.values(horcounter).includes(5) || Object.values(vercounter).includes(5) || diacount1 == 5 || diacount2 == 5;
 
-	return bingo, horcounter, vercounter, diacount1, diacount2;
+	return bingo;
+	//return bingo, horcounter, vercounter, diacount1, diacount2;
 }
 
 function displayBingoSheet(itemArray) {
