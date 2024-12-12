@@ -79,6 +79,12 @@ function lineChecker() {
 		stamp_array.push(nodeList[i].id);
 	}
 
+	for (let coord of stamp_array){
+		if (document.getElementById(coord).style.filter == "invert(1)") {
+			bingobefore = true;
+		}
+	}
+
 	// count horizontal stamps
 	for (coord in Object.keys(horcounter)){
 		for (let coord1 of stamp_array){
@@ -154,12 +160,6 @@ function lineChecker() {
 				document.getElementById(coord).style.filter = "invert(0)";
 			} catch {
 			}
-		}
-	}
-
-	for (let coord of stamp_array){
-		if (document.getElementById(coord).style.filter == "invert(1)") {
-			bingobefore = true;
 		}
 	}
 
