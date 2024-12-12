@@ -62,11 +62,12 @@ function crossOut(canvas) {
 	document.body.appendChild(newImage);
 
 	const nodeList = document.querySelectorAll("img[src='godkinhead.png']");
-	for (let i = 0; i < nodeList.length; i++) {
+	for (i = 0; i < nodeList.length; i++) {
 		ids.push(nodeList[i].id);
 	}
 
-	bingo, horcounter, vercounter, diacount1, diacount2 = lineChecker(ids);
+	bingo = lineChecker(ids);
+	//bingo, horcounter, vercounter, diacount1, diacount2 = lineChecker(ids);
 
 	if (bingo) {
 
