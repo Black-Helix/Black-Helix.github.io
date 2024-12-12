@@ -71,10 +71,8 @@ function crossOut(canvas) {
 	if (bingo) {
 		for (coord in Object.keys(horcounter)){
 			if (horcounter[coord] == 5) {
-				for (let i = 0; i < 5; i++) {
-					var stamp = document.getElementById(coord + i);
-					stamp.style.filter = "invert(1)";
-					document.body.appendChild(stamp);
+				for (i = 0; i < 5; i++) {
+					document.getElementById(coord + i).style.filter = "invert(1)";
 				}
 			}
 			
