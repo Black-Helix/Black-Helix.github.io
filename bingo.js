@@ -43,6 +43,9 @@ if (getCookie("accessCookie") == "") {
 }
 
 function crossOut(canvas) {
+	var ids = [];
+	const diagids1 = ['00', '11', '22', '33', '44'];
+	const diagids2 = ['04', '13', '22', '31', '40'];
 
 	canvasRect = canvas.getBoundingClientRect();
 	canvasLeftCoord = canvasRect.left;
@@ -59,18 +62,52 @@ function crossOut(canvas) {
 	document.body.appendChild(newImage);
 
 	const nodeList = document.querySelectorAll("img[src='godkinhead.png']");
-	var ids = [];
 	for (let i = 0; i < nodeList.length; i++) {
 		ids.push(nodeList[i].id);
-	  }
-
-	bingo = lineChecker(ids);
-
-	if (bingo) {
-		newImage.style.filter = "invert(1)";
 	}
 
-	document.body.appendChild(newImage);
+	bingo, horcounter, vercounter, diacount1, diacount2 = lineChecker(ids);
+
+	if (bingo) {
+		for (coord in Object.keys(horcounter)){
+			if (horcounter[coord] == 5) {
+				for (let i = 0; i < 5; i++) {
+					var stamp = document.getElementById(coord + i);
+					stamp.style.filter = "invert(1)";
+				}
+			}
+			
+		}
+
+		for (coord in Object.keys(vercounter)){
+			if (vercounter[coord] == 5) {
+				for (let i = 0; i < 5; i++) {
+					var stamp = document.getElementById(coord + i);
+					stamp.style.filter = "invert(1)";
+				}
+			}
+			
+		}
+
+		if (diacount1==5){
+			for (let coord of diagids1){
+				var stamp = document.getElementById(coord);
+				stamp.style.filter = "invert(1)";
+			}
+		}
+
+		if (diacount2==5){
+			for (let coord of diagids2){
+				var stamp = document.getElementById(coord);
+				stamp.style.filter = "invert(1)";
+			}
+		}
+	} else {
+		for (let coord of ids){
+			var stamp = document.getElementById(coord);
+			stamp.style.filter = "invert(0)";
+		}
+	}
 	
 }
 
@@ -111,9 +148,21 @@ function lineChecker(stamp_array) {
 	}
 
 	// check for row of stamps
+	// for (coord in Object.keys(horcounter)){
+	// 	if (horcounter[coord] != 5) {
+	// 		delete horcounter[coord];
+	// 	}
+	// }
+
+	// for (coord in Object.keys(vercounter)){
+	// 	if (vercounter[coord] != 5) {
+	// 		delete vercounter[coord];
+	// 	}
+	// }
+
 	bingo = Object.values(horcounter).includes(5) || Object.values(vercounter).includes(5) || diacount1 == 5 || diacount2 == 5;
 
-	return bingo;
+	return bingo, horcounter, vercounter, diacount1, diacount2;
 }
 
 function displayBingoSheet(itemArray) {
