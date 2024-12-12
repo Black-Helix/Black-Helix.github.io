@@ -66,11 +66,11 @@ function crossOut(canvas) {
 
 	bingo = lineChecker(ids);
 
-	if (bingo) {
-		newImage.style.filter = "invert(1)";
-	}
+	// if (bingo) {
+	// 	newImage.style.filter = "invert(1)";
+	// }
 
-	document.body.appendChild(newImage);
+	//document.body.appendChild(newImage);
 	
 }
 
