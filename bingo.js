@@ -108,14 +108,15 @@ function crossOut(canvas) {
 			}
 		}
 
-	} else {
-		for (let coord of ids){
-			var stamp = document.getElementById(coord);
-			stamp.style.filter = "invert(0)";
-			document.body.appendChild(stamp);
-		}
-	}
-	
+	} 
+	// else {
+	// 	for (let coord of ids){
+	// 		var stamp = document.getElementById(coord);
+	// 		stamp.style.filter = "invert(0)";
+	// 		document.body.appendChild(stamp);
+	// 	}
+	// }
+
 	document.body.appendChild(newImage);
 
 }
