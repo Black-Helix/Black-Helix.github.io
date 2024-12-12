@@ -43,10 +43,6 @@ if (getCookie("accessCookie") == "") {
 }
 
 function crossOut(canvas) {
-	var ids = [];
-	const diagids1 = ['00', '11', '22', '33', '44'];
-	const diagids2 = ['04', '13', '22', '31', '40'];
-
 	canvasRect = canvas.getBoundingClientRect();
 	canvasLeftCoord = canvasRect.left;
 	canvasTopCoord  = canvasRect.top;
@@ -61,70 +57,24 @@ function crossOut(canvas) {
 	newImage.style.opacity = "0.5";
 	document.body.appendChild(newImage);
 
-	const nodeList = document.querySelectorAll("img[src='godkinhead.png']");
-	for (i = 0; i < nodeList.length; i++) {
-		ids.push(nodeList[i].id);
-	}
-
-	const [horcounter, vercounter, diacount1, diacount2] = lineChecker(ids);
-
-	for (coord in Object.keys(horcounter)){
-		if (horcounter[coord] == 5) {
-			for (i = 0; i < 5; i++) {
-				document.getElementById(coord + i).style.filter = "invert(1)";
-			}
-		}
-		else if (horcounter[coord] != 0) {
-			for (i = 0; i < 5; i++) {
-				try {
-					document.getElementById(coord + i).style.filter = "invert(0)";
-				} catch {
-				}
-			}
-		}
-	}
-
-	for (coord in Object.keys(vercounter)){
-		if (vercounter[coord] == 5) {
-			for (let i = 0; i < 5; i++) {
-				document.getElementById(i + coord).style.filter = "invert(1)";
-			}
-		} 
-		// else {
-		// 	for (i = 0; i < 5; i++) {
-		// 		document.getElementById(i + coord).style.filter = "invert(0)";
-		// 	}
-		// }
-	}
-
-	if (diacount1==5){
-		for (let coord of diagids1){
-			document.getElementById(coord).style.filter = "invert(1)";
-		}
-	} 
-	// else {
-	// 	for (let coord of diagids1){
-	// 		document.getElementById(coord).style.filter = "invert(0)";
-	// 	}
-	// }
-
-	if (diacount2==5){
-		for (let coord of diagids2){
-			document.getElementById(coord).style.filter = "invert(1)";
-		}
-	} 
-	// else {
-	// 	for (let coord of diagids2){
-	// 		document.getElementById(coord).style.filter = "invert(0)";
-	// 	}
-	// }
+	lineChecker()
 }
 
-function lineChecker(stamp_array) {
+function lineChecker() {
+	var stamp_array = [];
+	const diagids1 = ['00', '11', '22', '33', '44'];
+	const diagids2 = ['04', '13', '22', '31', '40'];
+
+	const nodeList = document.querySelectorAll("img[src='godkinhead.png']");
+
 	var horcounter = {0:0, 1:0, 2:0, 3:0, 4:0};
 	var vercounter = {0:0, 1:0, 2:0, 3:0, 4:0};
 	var diacount1 = 0;
 	var diacount2 = 0;
+
+	for (i = 0; i < nodeList.length; i++) {
+		stamp_array.push(nodeList[i].id);
+	}
 
 	// count horizontal stamps
 	for (coord in Object.keys(horcounter)){
@@ -156,7 +106,67 @@ function lineChecker(stamp_array) {
 		}
 	}
 
-	return [horcounter, vercounter, diacount1, diacount2];
+	// update stamps
+
+	for (coord in Object.keys(horcounter)){
+		if (horcounter[coord] == 5) {
+			for (i = 0; i < 5; i++) {
+				document.getElementById(coord + i).style.filter = "invert(1)";
+			}
+		}
+		else if (horcounter[coord] != 0) {
+			for (i = 0; i < 5; i++) {
+				try {
+					document.getElementById(coord + i).style.filter = "invert(0)";
+				} catch {
+				}
+			}
+		}
+	}
+
+	for (coord in Object.keys(vercounter)){
+		if (vercounter[coord] == 5) {
+			for (let i = 0; i < 5; i++) {
+				document.getElementById(i + coord).style.filter = "invert(1)";
+			}
+		} 
+		else if (vercounter[coord] != 0) {
+			for (i = 0; i < 5; i++) {
+				try {
+					document.getElementById(i + coord).style.filter = "invert(0)";
+				} catch {
+				}
+			}
+		}
+	}
+
+	if (diacount1==5){
+		for (let coord of diagids1) {
+			document.getElementById(coord).style.filter = "invert(1)";
+		}
+	} 
+	else if (diacount1 != 0) {
+		for (let coord of diagids1) {
+			try {
+				document.getElementById(coord).style.filter = "invert(0)";
+			} catch {
+			}
+		}
+	}
+
+	if (diacount2==5){
+		for (let coord of diagids2) {
+			document.getElementById(coord).style.filter = "invert(1)";
+		}
+	} 
+	else if (diacount2 != 0) {
+		for (let coord of diagids2) {
+			try {
+				document.getElementById(coord).style.filter = "invert(0)";
+			} catch {
+			}
+		}
+	}
 }
 
 function displayBingoSheet(itemArray) {
