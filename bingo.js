@@ -195,7 +195,7 @@ function lineChecker() {
 		}
 	}
 
-	if ((bingobefore != true) && (bingoafter == true)) {
+	if ((bingobefore) && (bingoafter)) {
 		var newImage = document.createElement("img");
 		newImage.setAttribute('id', 'BINGO')
 		newImage.setAttribute('src', 'godkinhead.png');
