@@ -66,43 +66,48 @@ function crossOut(canvas) {
 		ids.push(nodeList[i].id);
 	}
 
-	const [bingo, horcounter, vercounter, diacount1, diacount2] = lineChecker(ids);
+	const [horcounter, vercounter, diacount1, diacount2] = lineChecker(ids);
 
-	if (bingo) {
-
-		for (coord in Object.keys(horcounter)){
-			if (horcounter[coord] == 5) {
-				for (i = 0; i < 5; i++) {
-					document.getElementById(coord + i).style.filter = "invert(1)";
-				}
+	for (coord in Object.keys(horcounter)){
+		if (horcounter[coord] == 5) {
+			for (i = 0; i < 5; i++) {
+				document.getElementById(coord + i).style.filter = "invert(1)";
 			}
-			
-		}
-
-		for (coord in Object.keys(vercounter)){
-			if (vercounter[coord] == 5) {
-				for (let i = 0; i < 5; i++) {
-					document.getElementById(i + coord).style.filter = "invert(1)";
-				}
-			}
-			
-		}
-
-		if (diacount1==5){
-			for (let coord of diagids1){
-				document.getElementById(coord).style.filter = "invert(1)";
+		} else {
+			for (i = 0; i < 5; i++) {
+				document.getElementById(coord + i).style.filter = "invert(0)";
 			}
 		}
+	}
 
-		if (diacount2==5){
-			for (let coord of diagids2){
-				document.getElementById(coord).style.filter = "invert(1)";
+	for (coord in Object.keys(vercounter)){
+		if (vercounter[coord] == 5) {
+			for (let i = 0; i < 5; i++) {
+				document.getElementById(i + coord).style.filter = "invert(1)";
+			}
+		} else {
+			for (i = 0; i < 5; i++) {
+				document.getElementById(i + coord).style.filter = "invert(0)";
 			}
 		}
+	}
 
-	} 
-	else {
-		for (let coord of ids){
+	if (diacount1==5){
+		for (let coord of diagids1){
+			document.getElementById(coord).style.filter = "invert(1)";
+		}
+	} else {
+		for (let coord of diagids1){
+			document.getElementById(coord).style.filter = "invert(0)";
+		}
+	}
+
+	if (diacount2==5){
+		for (let coord of diagids2){
+			document.getElementById(coord).style.filter = "invert(1)";
+		}
+	} else {
+		for (let coord of diagids2){
 			document.getElementById(coord).style.filter = "invert(0)";
 		}
 	}
@@ -113,7 +118,6 @@ function lineChecker(stamp_array) {
 	var vercounter = {0:0, 1:0, 2:0, 3:0, 4:0};
 	var diacount1 = 0;
 	var diacount2 = 0;
-	var bingo = false;
 
 	// count horizontal stamps
 	for (coord in Object.keys(horcounter)){
@@ -145,9 +149,7 @@ function lineChecker(stamp_array) {
 		}
 	}
 
-	bingo = Object.values(horcounter).includes(5) || Object.values(vercounter).includes(5) || diacount1 == 5 || diacount2 == 5;
-
-	return [bingo, horcounter, vercounter, diacount1, diacount2];
+	return [horcounter, vercounter, diacount1, diacount2];
 }
 
 function displayBingoSheet(itemArray) {
