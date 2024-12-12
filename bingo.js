@@ -108,13 +108,9 @@ function lineChecker() {
 
 	// update stamps
 
+	// clear horizontal inversion
 	for (coord in Object.keys(horcounter)){
-		if (horcounter[coord] == 5) {
-			for (i = 0; i < 5; i++) {
-				document.getElementById(coord + i).style.filter = "invert(1)";
-			}
-		}
-		else if (horcounter[coord] != 0) {
+		if (horcounter[coord] != 0) {
 			for (i = 0; i < 5; i++) {
 				try {
 					document.getElementById(coord + i).style.filter = "invert(0)";
@@ -124,13 +120,9 @@ function lineChecker() {
 		}
 	}
 
+	// clear vertical inversion
 	for (coord in Object.keys(vercounter)){
-		if (vercounter[coord] == 5) {
-			for (let i = 0; i < 5; i++) {
-				document.getElementById(i + coord).style.filter = "invert(1)";
-			}
-		} 
-		else if (vercounter[coord] != 0) {
+		if (vercounter[coord] != 0) {
 			for (i = 0; i < 5; i++) {
 				try {
 					document.getElementById(i + coord).style.filter = "invert(0)";
@@ -140,12 +132,8 @@ function lineChecker() {
 		}
 	}
 
-	if (diacount1==5){
-		for (let coord of diagids1) {
-			document.getElementById(coord).style.filter = "invert(1)";
-		}
-	} 
-	else if (diacount1 != 0) {
+	// clear diagonal 1 inversion
+	if (diacount1 != 0) {
 		for (let coord of diagids1) {
 			try {
 				document.getElementById(coord).style.filter = "invert(0)";
@@ -154,17 +142,41 @@ function lineChecker() {
 		}
 	}
 
-	if (diacount2==5){
-		for (let coord of diagids2) {
-			document.getElementById(coord).style.filter = "invert(1)";
-		}
-	} 
-	else if (diacount2 != 0) {
+	// clear diagonal 2 inversion
+	if (diacount2 != 0) {
 		for (let coord of diagids2) {
 			try {
 				document.getElementById(coord).style.filter = "invert(0)";
 			} catch {
 			}
+		}
+	}
+
+	for (coord in Object.keys(horcounter)){
+		if (horcounter[coord] == 5) {
+			for (i = 0; i < 5; i++) {
+				document.getElementById(coord + i).style.filter = "invert(1)";
+			}
+		}
+	}
+
+	for (coord in Object.keys(vercounter)){
+		if (vercounter[coord] == 5) {
+			for (let i = 0; i < 5; i++) {
+				document.getElementById(i + coord).style.filter = "invert(1)";
+			}
+		}
+	}
+
+	if (diacount1==5){
+		for (let coord of diagids1) {
+			document.getElementById(coord).style.filter = "invert(1)";
+		}
+	}
+
+	if (diacount2==5){
+		for (let coord of diagids2) {
+			document.getElementById(coord).style.filter = "invert(1)";
 		}
 	}
 }
