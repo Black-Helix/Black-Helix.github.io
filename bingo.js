@@ -74,11 +74,11 @@ function crossOut(canvas) {
 				document.getElementById(coord + i).style.filter = "invert(1)";
 			}
 		} 
-		// else {
-		// 	for (i = 0; i < 5; i++) {
-		// 		document.getElementById(coord + i).style.filter = "invert(0)";
-		// 	}
-		// }
+		else {
+			for (i = 0; i < 5; i++) {
+				document.getElementById(coord + i).style.filter = "invert(0)";
+			}
+		}
 	}
 
 	for (coord in Object.keys(vercounter)){
