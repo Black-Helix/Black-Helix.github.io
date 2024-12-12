@@ -49,6 +49,7 @@ function crossOut(canvas) {
 	canvasTopCoord  = canvasRect.top;
 
 	var newImage = document.createElement("img");
+	newImage.setAttribute('id', (canvas.id).substr(-2))
 	newImage.setAttribute('src', 'godkinhead.png');
 	newImage.setAttribute('class', 'overlays');
 	newImage.setAttribute('onclick', "this.remove()");
