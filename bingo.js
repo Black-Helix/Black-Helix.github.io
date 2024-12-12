@@ -113,7 +113,7 @@ function lineChecker() {
 
 	// clear horizontal inversion
 	for (coord in Object.keys(horcounter)){
-		if (horcounter[coord] != 0) {
+		if (horcounter[coord] != 5) {
 			for (i = 0; i < 5; i++) {
 				try {
 					document.getElementById(coord + i).style.filter = "invert(0)";
@@ -125,7 +125,7 @@ function lineChecker() {
 
 	// clear vertical inversion
 	for (coord in Object.keys(vercounter)){
-		if (vercounter[coord] != 0) {
+		if (vercounter[coord] != 5) {
 			for (i = 0; i < 5; i++) {
 				try {
 					document.getElementById(i + coord).style.filter = "invert(0)";
@@ -137,7 +137,7 @@ function lineChecker() {
 
 	// clear diagonal 1 inversion
 	console.log("diacount1 value is: " + diacount1)
-	if (diacount1 != 0) {
+	if (diacount1 != 5) {
 		for (let coord of diagids1) {
 			try {
 				document.getElementById(coord).style.filter = "invert(0)";
@@ -148,7 +148,7 @@ function lineChecker() {
 
 	// clear diagonal 2 inversion
 	console.log("diacount2 value is: " + diacount2)
-	if (diacount2 != 0) {
+	if (diacount2 != 5) {
 		for (let coord of diagids2) {
 			try {
 				document.getElementById(coord).style.filter = "invert(0)";
