@@ -154,7 +154,7 @@ function lineChecker() {
 		}
 	}
 
-	for (let coord of ids){
+	for (let coord of stamp_array){
 		if (document.getElementById(coord).style.filter == "invert(1)") {
 			bingo = true;
 		}
@@ -188,7 +188,7 @@ function lineChecker() {
 		}
 	}
 
-	for (let coord of ids){
+	for (let coord of stamp_array){
 		if (document.getElementById(coord).style.filter == "invert(1)") {
 			bingo = true;
 		}
