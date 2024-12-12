@@ -69,6 +69,9 @@ function crossOut(canvas) {
 	bingo, horcounter, vercounter, diacount1, diacount2 = lineChecker(ids);
 
 	if (bingo) {
+
+		newImage.style.filter = "invert(1)";
+
 		for (coord in Object.keys(horcounter)){
 			if (horcounter[coord] == 5) {
 				for (i = 0; i < 5; i++) {
@@ -113,6 +116,8 @@ function crossOut(canvas) {
 		}
 	}
 	
+	document.body.appendChild(newImage);
+
 }
 
 function lineChecker(stamp_array) {
