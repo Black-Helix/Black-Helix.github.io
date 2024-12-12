@@ -66,8 +66,8 @@ function crossOut(canvas) {
 		ids.push(nodeList[i].id);
 	}
 
-	bingo = lineChecker(ids);
-	//bingo, horcounter, vercounter, diacount1, diacount2 = lineChecker(ids);
+	//bingo = lineChecker(ids);
+	const [bingo, horcounter, vercounter, diacount1, diacount2] = lineChecker(ids);
 
 	if (bingo) {
 
@@ -137,6 +137,7 @@ function lineChecker(stamp_array) {
 			}
 		}
 	}
+
 	// count vertical stamps
 	for (coord in Object.keys(vercounter)){
 		for (let coord1 of stamp_array){
@@ -158,23 +159,9 @@ function lineChecker(stamp_array) {
 		}
 	}
 
-	// check for row of stamps
-	// for (coord in Object.keys(horcounter)){
-	// 	if (horcounter[coord] != 5) {
-	// 		delete horcounter[coord];
-	// 	}
-	// }
-
-	// for (coord in Object.keys(vercounter)){
-	// 	if (vercounter[coord] != 5) {
-	// 		delete vercounter[coord];
-	// 	}
-	// }
-
 	bingo = Object.values(horcounter).includes(5) || Object.values(vercounter).includes(5) || diacount1 == 5 || diacount2 == 5;
 
-	return bingo;
-	//return bingo, horcounter, vercounter, diacount1, diacount2;
+	return [bingo, horcounter, vercounter, diacount1, diacount2];
 }
 
 function displayBingoSheet(itemArray) {
