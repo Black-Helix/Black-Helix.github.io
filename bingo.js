@@ -72,7 +72,8 @@ function lineChecker() {
 	var diacount1 = 0;
 	var diacount2 = 0;
 
-	var bingo = false;
+	var bingobefore = false;
+	var bingoafter = false;
 
 	for (i = 0; i < nodeList.length; i++) {
 		stamp_array.push(nodeList[i].id);
@@ -156,7 +157,7 @@ function lineChecker() {
 
 	for (let coord of stamp_array){
 		if (document.getElementById(coord).style.filter == "invert(1)") {
-			bingo = true;
+			bingobefore = true;
 		}
 	}
 
@@ -190,18 +191,16 @@ function lineChecker() {
 
 	for (let coord of stamp_array){
 		if (document.getElementById(coord).style.filter == "invert(1)") {
-			bingo = true;
+			bingoafter = true;
 		}
 	}
 
-	if (bingo) {
+	if (bingobefore == false && bingoafter == true) {
 		var newImage = document.createElement("img");
 		newImage.setAttribute('id', 'BINGO')
 		newImage.setAttribute('src', 'godkinhead.png');
 		newImage.setAttribute('class', 'bingooverlay');
 		newImage.setAttribute('onclick', "this.remove()");
-		newImage.style.left = canvasLeftCoord + "px";
-		newImage.style.top = canvasTopCoord + "px";
 		newImage.style.opacity = "0.75";
 		document.body.appendChild(newImage);
 	}
