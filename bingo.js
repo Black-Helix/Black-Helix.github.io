@@ -73,11 +73,12 @@ function crossOut(canvas) {
 			for (i = 0; i < 5; i++) {
 				document.getElementById(coord + i).style.filter = "invert(1)";
 			}
-		} else {
-			for (i = 0; i < 5; i++) {
-				document.getElementById(coord + i).style.filter = "invert(0)";
-			}
-		}
+		} 
+		// else {
+		// 	for (i = 0; i < 5; i++) {
+		// 		document.getElementById(coord + i).style.filter = "invert(0)";
+		// 	}
+		// }
 	}
 
 	for (coord in Object.keys(vercounter)){
@@ -85,32 +86,35 @@ function crossOut(canvas) {
 			for (let i = 0; i < 5; i++) {
 				document.getElementById(i + coord).style.filter = "invert(1)";
 			}
-		} else {
-			for (i = 0; i < 5; i++) {
-				document.getElementById(i + coord).style.filter = "invert(0)";
-			}
-		}
+		} 
+		// else {
+		// 	for (i = 0; i < 5; i++) {
+		// 		document.getElementById(i + coord).style.filter = "invert(0)";
+		// 	}
+		// }
 	}
 
 	if (diacount1==5){
 		for (let coord of diagids1){
 			document.getElementById(coord).style.filter = "invert(1)";
 		}
-	} else {
-		for (let coord of diagids1){
-			document.getElementById(coord).style.filter = "invert(0)";
-		}
-	}
+	} 
+	// else {
+	// 	for (let coord of diagids1){
+	// 		document.getElementById(coord).style.filter = "invert(0)";
+	// 	}
+	// }
 
 	if (diacount2==5){
 		for (let coord of diagids2){
 			document.getElementById(coord).style.filter = "invert(1)";
 		}
-	} else {
-		for (let coord of diagids2){
-			document.getElementById(coord).style.filter = "invert(0)";
-		}
-	}
+	} 
+	// else {
+	// 	for (let coord of diagids2){
+	// 		document.getElementById(coord).style.filter = "invert(0)";
+	// 	}
+	// }
 }
 
 function lineChecker(stamp_array) {
