@@ -85,7 +85,7 @@ function crossOut(canvas) {
 		for (coord in Object.keys(vercounter)){
 			if (vercounter[coord] == 5) {
 				for (let i = 0; i < 5; i++) {
-					var stamp = document.getElementById(coord + i);
+					var stamp = document.getElementById(i+ coord);
 					stamp.style.filter = "invert(1)";
 					document.body.appendChild(stamp);
 				}
