@@ -57,7 +57,63 @@ function crossOut(canvas) {
 	newImage.style.top = canvasTopCoord + "px";
 	newImage.style.opacity = "0.5";
 	document.body.appendChild(newImage);
+
+	const nodeList = document.querySelectorAll("img[src='godkinhead.png']");
+	var ids = [];
+	for (let i = 0; i < nodeList.length; i++) {
+		ids.push(nodeList[i].id);
+	  }
+
+	bingo = lineChecker(ids);
+
+	if (bingo) {
+		newImage.style.filter = "invert(1)";
+	}
+
+	document.body.appendChild(newImage);
 	
+}
+
+function lineChecker(stamp_array) {
+	var horcounter = {0:0, 1:0, 2:0, 3:0, 4:0};
+	var vercounter = {0:0, 1:0, 2:0, 3:0, 4:0};
+	var diacount1 = 0;
+	var diacount2 = 0;
+	var bingo = false;
+
+	// count horizontal stamps
+	for (coord in Object.keys(horcounter)){
+		for (let coord1 of stamp_array){
+			if (coord1.charAt(0) == coord) {
+				horcounter[coord]++;
+			}
+		}
+	}
+	// count vertical stamps
+	for (coord in Object.keys(vercounter)){
+		for (let coord1 of stamp_array){
+			if (coord1.charAt(1) == coord) {
+				vercounter[coord]++;
+			}
+		}
+	}
+
+	// count diagonal stamps
+	for (let coord1 of stamp_array){
+		if (coord1.charAt(0) == coord1.charAt(1)) {
+			diacount1++;
+			if (coord1.charAt(0) && coord1.charAt(1) == 2) {
+				diacount2++;
+			}
+		} else if ((Number(coord1.charAt(0)) + Number(coord1.charAt(1))) == 4) {
+			diacount2++;
+		}
+	}
+
+	// check for row of stamps
+	bingo = Object.values(horcounter).includes(5) || Object.values(vercounter).includes(5) || diacount1 == 5 || diacount2 == 5;
+
+	return bingo;
 }
 
 function displayBingoSheet(itemArray) {
