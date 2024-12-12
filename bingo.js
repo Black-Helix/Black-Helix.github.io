@@ -51,7 +51,7 @@ function crossOut(canvas) {
 	newImage.setAttribute('id', (canvas.id).substr(-2))
 	newImage.setAttribute('src', 'godkinhead.png');
 	newImage.setAttribute('class', 'overlays');
-	newImage.setAttribute('onclick', "this.remove()");
+	newImage.setAttribute('onclick', "this.remove(); lineChecker()");
 	newImage.style.left = canvasLeftCoord + "px";
 	newImage.style.top = canvasTopCoord + "px";
 	newImage.style.opacity = "0.5";
