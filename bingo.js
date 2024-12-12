@@ -136,6 +136,7 @@ function lineChecker() {
 	}
 
 	// clear diagonal 1 inversion
+	console.log("diacount1 value is: " + diacount1)
 	if (diacount1 != 0) {
 		for (let coord of diagids1) {
 			try {
@@ -146,6 +147,7 @@ function lineChecker() {
 	}
 
 	// clear diagonal 2 inversion
+	console.log("diacount2 value is: " + diacount2)
 	if (diacount2 != 0) {
 		for (let coord of diagids2) {
 			try {
