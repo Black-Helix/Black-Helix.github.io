@@ -73,10 +73,13 @@ function crossOut(canvas) {
 			for (i = 0; i < 5; i++) {
 				document.getElementById(coord + i).style.filter = "invert(1)";
 			}
-		} 
-		else {
+		}
+		else if (horcounter[coord] != 0) {
 			for (i = 0; i < 5; i++) {
-				document.getElementById(coord + i).style.filter = "invert(0)";
+				try {
+					document.getElementById(coord + i).style.filter = "invert(0)";
+				} catch {
+				}
 			}
 		}
 	}
