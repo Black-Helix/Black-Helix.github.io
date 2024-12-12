@@ -72,6 +72,8 @@ function lineChecker() {
 	var diacount1 = 0;
 	var diacount2 = 0;
 
+	var bingo = false;
+
 	for (i = 0; i < nodeList.length; i++) {
 		stamp_array.push(nodeList[i].id);
 	}
@@ -152,6 +154,12 @@ function lineChecker() {
 		}
 	}
 
+	for (let coord of ids){
+		if (document.getElementById(coord).style.filter == "invert(1)") {
+			bingo = true;
+		}
+	}
+
 	for (coord in Object.keys(horcounter)){
 		if (horcounter[coord] == 5) {
 			for (i = 0; i < 5; i++) {
@@ -178,6 +186,24 @@ function lineChecker() {
 		for (let coord of diagids2) {
 			document.getElementById(coord).style.filter = "invert(1)";
 		}
+	}
+
+	for (let coord of ids){
+		if (document.getElementById(coord).style.filter == "invert(1)") {
+			bingo = true;
+		}
+	}
+
+	if (bingo) {
+		var newImage = document.createElement("img");
+		newImage.setAttribute('id', 'BINGO')
+		newImage.setAttribute('src', 'godkinhead.png');
+		newImage.setAttribute('class', 'bingooverlay');
+		newImage.setAttribute('onclick', "this.remove()");
+		newImage.style.left = canvasLeftCoord + "px";
+		newImage.style.top = canvasTopCoord + "px";
+		newImage.style.opacity = "0.75";
+		document.body.appendChild(newImage);
 	}
 }
 
