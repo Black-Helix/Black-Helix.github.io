@@ -74,6 +74,7 @@ function crossOut(canvas) {
 				for (let i = 0; i < 5; i++) {
 					var stamp = document.getElementById(coord + i);
 					stamp.style.filter = "invert(1)";
+					document.body.appendChild(stamp);
 				}
 			}
 			
@@ -84,6 +85,7 @@ function crossOut(canvas) {
 				for (let i = 0; i < 5; i++) {
 					var stamp = document.getElementById(coord + i);
 					stamp.style.filter = "invert(1)";
+					document.body.appendChild(stamp);
 				}
 			}
 			
@@ -93,6 +95,7 @@ function crossOut(canvas) {
 			for (let coord of diagids1){
 				var stamp = document.getElementById(coord);
 				stamp.style.filter = "invert(1)";
+				document.body.appendChild(stamp);
 			}
 		}
 
@@ -100,12 +103,15 @@ function crossOut(canvas) {
 			for (let coord of diagids2){
 				var stamp = document.getElementById(coord);
 				stamp.style.filter = "invert(1)";
+				document.body.appendChild(stamp);
 			}
 		}
+
 	} else {
 		for (let coord of ids){
 			var stamp = document.getElementById(coord);
 			stamp.style.filter = "invert(0)";
+			document.body.appendChild(stamp);
 		}
 	}
 	
