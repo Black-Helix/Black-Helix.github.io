@@ -201,7 +201,7 @@ function lineChecker() {
 		newImage.setAttribute('src', 'godkinhead.png');
 		newImage.setAttribute('class', 'bingooverlay');
 		newImage.setAttribute('onclick', "this.remove()");
-		newImage.style.opacity = "0.75";
+		newImage.style.opacity = "1";
 		document.body.appendChild(newImage);
 	}
 }
