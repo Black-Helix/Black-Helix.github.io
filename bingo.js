@@ -210,7 +210,18 @@ function lineChecker() {
 		newImage.style.top = canvasTopCoord + "px";
 		newImage.style.opacity = "1";
 		document.body.appendChild(newImage);
-		setTimeout(startConfetti(), "10000");
+
+		var newDiv = document.createElement("div");
+		newDiv.setAttribute('id', 'BINGOtext');
+		newDiv.setAttribute('class', 'bingooverlay');
+		newImage.style.left = canvasLeftCoord + "px";
+		newImage.style.top = canvasTopCoord + "px";
+		newDiv.style.background = "red";
+		newDiv.style.color = "white";
+		newDiv.innerHTML = "Hello";
+		document.body.appendChild(newDiv);
+
+		startConfetti();
 	}
 }
 
