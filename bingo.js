@@ -211,19 +211,34 @@ function lineChecker() {
 		newImage.style.opacity = "1";
 		document.body.appendChild(newImage);
 
-		var canvas = document.getElementById("canvas 22");
+		var canvas = document.getElementById("canvas 12");
 		canvasRect = canvas.getBoundingClientRect();
 		canvasLeftCoord = canvasRect.left;
 		canvasTopCoord  = canvasRect.top;
 
 		var newDiv = document.createElement("div");
-		newDiv.setAttribute('id', 'BINGOtext');
+		newDiv.setAttribute('id', 'BINGOtext1');
 		newDiv.setAttribute('class', 'bingotextoverlay');
 		newDiv.style.left = canvasLeftCoord + "px";
 		newDiv.style.top = canvasTopCoord + "px";
 		newDiv.style.color = "black";
-		newDiv.style.fontSize = "xxx-large";
-		newDiv.innerHTML = "BINGO! <br /> Sapere Aude";
+		newDiv.style.fontSize = "xx-large";
+		newDiv.innerHTML = "BINGO!";
+		document.body.appendChild(newDiv);
+
+		var canvas = document.getElementById("canvas 32");
+		canvasRect = canvas.getBoundingClientRect();
+		canvasLeftCoord = canvasRect.left;
+		canvasTopCoord  = canvasRect.top;
+
+		var newDiv = document.createElement("div");
+		newDiv.setAttribute('id', 'BINGOtext2');
+		newDiv.setAttribute('class', 'bingotextoverlay');
+		newDiv.style.left = canvasLeftCoord + "px";
+		newDiv.style.top = canvasTopCoord + "px";
+		newDiv.style.color = "black";
+		newDiv.style.fontSize = "xx-large";
+		newDiv.innerHTML = "Sapere Aude";
 		document.body.appendChild(newDiv);
 
 		startConfetti();
@@ -231,8 +246,10 @@ function lineChecker() {
 }
 
 function removeBingoText(){
-	const element = document.getElementById("BINGOtext");
-	element.remove();
+	const element1 = document.getElementById("BINGOtext1");
+	const element2 = document.getElementById("BINGOtext2");
+	element1.remove();
+	element2.remove();
 }
 
 function displayBingoSheet(itemArray) {
