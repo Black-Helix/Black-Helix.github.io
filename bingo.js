@@ -142,7 +142,6 @@ function lineChecker() {
 	}
 
 	// clear diagonal 1 inversion
-	console.log("diacount1 value is: " + diacount1)
 	if (diacount1 != 5) {
 		for (let coord of diagids1) {
 			try {
@@ -153,7 +152,6 @@ function lineChecker() {
 	}
 
 	// clear diagonal 2 inversion
-	console.log("diacount2 value is: " + diacount2)
 	if (diacount2 != 5) {
 		for (let coord of diagids2) {
 			try {
@@ -196,9 +194,6 @@ function lineChecker() {
 			bingoafter++;
 		}
 	}
-
-	console.log("bingobefore value is: " + bingobefore)
-	console.log("bingoafter value is: " + bingoafter)
 
 	if ((bingobefore < bingoafter)) {
 		var canvas = document.getElementById("canvas 00");
