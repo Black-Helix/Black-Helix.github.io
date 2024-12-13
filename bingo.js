@@ -203,6 +203,7 @@ function lineChecker() {
 	if ((bingobefore < bingoafter)) {
 		var canvas = document.getElementById("canvas 00");
 		canvasRect = canvas.getBoundingClientRect();
+		canvasLeftCoord = canvasRect.left;
 		canvasTopCoord  = canvasRect.top;
 		
 		var newImage = document.createElement("img");
@@ -210,8 +211,9 @@ function lineChecker() {
 		newImage.setAttribute('src', 'godkinhead.png');
 		newImage.setAttribute('class', 'bingooverlay');
 		newImage.setAttribute('onclick', "this.remove()");
-		newImage.style.opacity = "1";
+		newImage.style.left = canvasLeftCoord + "px";
 		newImage.style.top = canvasTopCoord + "px";
+		newImage.style.opacity = "1";
 		document.body.appendChild(newImage);
 	}
 }
