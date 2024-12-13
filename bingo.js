@@ -203,7 +203,7 @@ function lineChecker() {
 		
 		var newImage = document.createElement("img");
 		newImage.setAttribute('id', 'BINGO')
-		newImage.setAttribute('src', 'godkinhead.png');
+		newImage.setAttribute('src', 'godkinbingohead.png');
 		newImage.setAttribute('class', 'bingooverlay');
 		newImage.setAttribute('onclick', "this.remove(); stopConfetti(); removeBingoText()");
 		newImage.style.left = canvasLeftCoord + "px";
@@ -211,41 +211,41 @@ function lineChecker() {
 		newImage.style.opacity = "1";
 		document.body.appendChild(newImage);
 
-		var canvas = document.getElementById("canvas 12");
-		canvasRect = canvas.getBoundingClientRect();
-		canvasLeftCoord = canvasRect.left;
-		canvasTopCoord  = canvasRect.top;
+		// var canvas = document.getElementById("canvas 12");
+		// canvasRect = canvas.getBoundingClientRect();
+		// canvasLeftCoord = canvasRect.left;
+		// canvasTopCoord  = canvasRect.top;
 
-		var newDiv = document.createElement("div");
-		newDiv.setAttribute('id', 'BINGOtext1');
-		newDiv.setAttribute('class', 'bingotextoverlay');
-		newDiv.style.left = canvasLeftCoord + "px";
-		newDiv.style.top = canvasTopCoord + "px";
-		newDiv.style.color = "black";
-		newDiv.style.fontSize = "xx-large";
-		newDiv.innerHTML = "BINGO!";
-		document.body.appendChild(newDiv);
+		// var newDiv = document.createElement("div");
+		// newDiv.setAttribute('id', 'BINGOtext1');
+		// newDiv.setAttribute('class', 'bingotextoverlay');
+		// newDiv.style.left = canvasLeftCoord + "px";
+		// newDiv.style.top = canvasTopCoord + "px";
+		// newDiv.style.color = "black";
+		// newDiv.style.fontSize = "xx-large";
+		// newDiv.innerHTML = "BINGO!";
+		// document.body.appendChild(newDiv);
 
-		var canvas = document.getElementById("canvas 31");
-		canvasRect = canvas.getBoundingClientRect();
-		canvasLeftCoord1 = canvasRect.left;
+		// var canvas = document.getElementById("canvas 31");
+		// canvasRect = canvas.getBoundingClientRect();
+		// canvasLeftCoord1 = canvasRect.left;
 
-		var canvas = document.getElementById("canvas 32");
-		canvasRect = canvas.getBoundingClientRect();
-		canvasLeftCoord2 = canvasRect.left;
-		canvasTopCoord  = canvasRect.top;
+		// var canvas = document.getElementById("canvas 32");
+		// canvasRect = canvas.getBoundingClientRect();
+		// canvasLeftCoord2 = canvasRect.left;
+		// canvasTopCoord  = canvasRect.top;
 
-		canvasLeftCoord = (canvasLeftCoord1 + canvasLeftCoord2)/2
+		// canvasLeftCoord = (canvasLeftCoord1 + canvasLeftCoord2)/2
 
-		var newDiv = document.createElement("div");
-		newDiv.setAttribute('id', 'BINGOtext2');
-		newDiv.setAttribute('class', 'bingotextoverlay');
-		newDiv.style.left = canvasLeftCoord + "px";
-		newDiv.style.top = canvasTopCoord + "px";
-		newDiv.style.color = "black";
-		newDiv.style.fontSize = "x-large";
-		newDiv.innerHTML = "• Sapere Aude •";
-		document.body.appendChild(newDiv);
+		// var newDiv = document.createElement("div");
+		// newDiv.setAttribute('id', 'BINGOtext2');
+		// newDiv.setAttribute('class', 'bingotextoverlay');
+		// newDiv.style.left = canvasLeftCoord + "px";
+		// newDiv.style.top = canvasTopCoord + "px";
+		// newDiv.style.color = "black";
+		// newDiv.style.fontSize = "x-large";
+		// newDiv.innerHTML = "• Sapere Aude •";
+		// document.body.appendChild(newDiv);
 
 		startConfetti();
 	}
