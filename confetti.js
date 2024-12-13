@@ -1,6 +1,6 @@
 'use strict';
 
-window.onload = function() {
+function confetti() {
   // Globals
   var random = Math.random
     , cos = Math.cos
