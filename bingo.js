@@ -425,7 +425,7 @@ function confetti() {
 
   // Create the overarching container
   var container = document.createElement('div');
-  container.id     		   = 'confetti';
+  container.setAttribute("id", "confetti");
   container.style.position = 'fixed';
   container.style.top      = '0';
   container.style.left     = '0';
