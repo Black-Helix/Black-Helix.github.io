@@ -211,6 +211,11 @@ function lineChecker() {
 		newImage.style.opacity = "1";
 		document.body.appendChild(newImage);
 
+		var canvas = document.getElementById("canvas 22");
+		canvasRect = canvas.getBoundingClientRect();
+		canvasLeftCoord = canvasRect.left;
+		canvasTopCoord  = canvasRect.top;
+
 		var newDiv = document.createElement("div");
 		newDiv.setAttribute('id', 'BINGOtext');
 		newDiv.setAttribute('class', 'bingotextoverlay');
