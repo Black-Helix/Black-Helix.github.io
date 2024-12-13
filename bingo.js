@@ -243,8 +243,8 @@ function lineChecker() {
 		newDiv.style.left = canvasLeftCoord + "px";
 		newDiv.style.top = canvasTopCoord + "px";
 		newDiv.style.color = "black";
-		newDiv.style.fontSize = "xx-large";
-		newDiv.innerHTML = "Sapere Aude";
+		newDiv.style.fontSize = "x-large";
+		newDiv.innerHTML = "• Sapere Aude •";
 		document.body.appendChild(newDiv);
 
 		startConfetti();
