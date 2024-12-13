@@ -226,10 +226,16 @@ function lineChecker() {
 		newDiv.innerHTML = "BINGO!";
 		document.body.appendChild(newDiv);
 
+		var canvas = document.getElementById("canvas 31");
+		canvasRect = canvas.getBoundingClientRect();
+		canvasLeftCoord1 = canvasRect.left;
+
 		var canvas = document.getElementById("canvas 32");
 		canvasRect = canvas.getBoundingClientRect();
-		canvasLeftCoord = canvasRect.left;
+		canvasLeftCoord2 = canvasRect.left;
 		canvasTopCoord  = canvasRect.top;
+
+		canvasLeftCoord = (canvasLeftCoord1 + canvasLeftCoord2)/2
 
 		var newDiv = document.createElement("div");
 		newDiv.setAttribute('id', 'BINGOtext2');
