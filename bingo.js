@@ -201,12 +201,17 @@ function lineChecker() {
 	console.log("bingoafter value is: " + bingoafter)
 
 	if ((bingobefore < bingoafter)) {
+		var canvas = document.getElementById("canvas 00");
+		canvasRect = canvas.getBoundingClientRect();
+		canvasTopCoord  = canvasRect.top;
+		
 		var newImage = document.createElement("img");
 		newImage.setAttribute('id', 'BINGO')
 		newImage.setAttribute('src', 'godkinhead.png');
 		newImage.setAttribute('class', 'bingooverlay');
 		newImage.setAttribute('onclick', "this.remove()");
 		newImage.style.opacity = "1";
+		newImage.style.top = canvasTopCoord + "px";
 		document.body.appendChild(newImage);
 	}
 }
