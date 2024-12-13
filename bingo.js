@@ -210,7 +210,7 @@ function lineChecker() {
 		newImage.style.top = canvasTopCoord + "px";
 		newImage.style.opacity = "1";
 		document.body.appendChild(newImage);
-		confetti.start;
+		startConfetti();
 	}
 }
 
