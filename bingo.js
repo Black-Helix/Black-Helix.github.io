@@ -514,7 +514,7 @@ function updateParticles() {
 	var width = window.innerWidth;
 	var height = window.innerHeight;
 	var particle;
-	//waveAngle += 0.01;
+	waveAngle += 0.01;
 	for (var i = 0; i < particles.length; i++) {
 		particle = particles[i];
 		if (!streamingConfetti && particle.y < -15)
@@ -522,7 +522,7 @@ function updateParticles() {
 		else {
 			particle.tiltAngle += particle.tiltAngleIncrement;
 			//particle.x += Math.sin(waveAngle) - 0.5;
-			//particle.y += (Math.cos(waveAngle) + particle.diameter + confetti.speed) * 0.5;
+			particle.y += (Math.cos(waveAngle) + particle.diameter + confetti.speed) * 0.5;
 			particle.tilt = Math.sin(particle.tiltAngle) * 15;
 		}
 		if (particle.x > width + 20 || particle.x < -20 || particle.y > height) {
