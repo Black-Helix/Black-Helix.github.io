@@ -205,7 +205,7 @@ function lineChecker() {
 		newImage.setAttribute('id', 'BINGO')
 		newImage.setAttribute('src', 'godkinhead.png');
 		newImage.setAttribute('class', 'bingooverlay');
-		newImage.setAttribute('onclick', "this.remove()");
+		newImage.setAttribute('onclick', "this.remove(); stopConfetti()");
 		newImage.style.left = canvasLeftCoord + "px";
 		newImage.style.top = canvasTopCoord + "px";
 		newImage.style.opacity = "1";
