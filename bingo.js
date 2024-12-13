@@ -205,11 +205,12 @@ function lineChecker() {
 		newImage.setAttribute('id', 'BINGO')
 		newImage.setAttribute('src', 'godkinhead.png');
 		newImage.setAttribute('class', 'bingooverlay');
-		newImage.setAttribute('onclick', "this.remove(); confetti()");
+		newImage.setAttribute('onclick', "this.remove()");
 		newImage.style.left = canvasLeftCoord + "px";
 		newImage.style.top = canvasTopCoord + "px";
 		newImage.style.opacity = "1";
 		document.body.appendChild(newImage);
+		confetti();
 	}
 }
 
