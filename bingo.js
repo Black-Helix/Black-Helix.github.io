@@ -210,7 +210,7 @@ function lineChecker() {
 		newImage.style.top = canvasTopCoord + "px";
 		newImage.style.opacity = "1";
 		document.body.appendChild(newImage);
-		startConfetti();
+		setTimeout(startConfetti(), 500);
 	}
 }
 
@@ -411,7 +411,7 @@ function runAnimation() {
 	}
 }
 
-setTimeout(function startConfetti(timeout, min, max) {
+function startConfetti(timeout, min, max) {
 	var width = window.innerWidth;
 	var height = window.innerHeight;
 	window.requestAnimationFrame = (function() {
@@ -464,7 +464,7 @@ setTimeout(function startConfetti(timeout, min, max) {
 	if (timeout) {
 		window.setTimeout(stopConfetti, timeout);
 	}
-}, 500);
+}
 
 function stopConfetti() {
 	streamingConfetti = false;
