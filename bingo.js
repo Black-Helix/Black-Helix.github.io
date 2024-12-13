@@ -205,7 +205,7 @@ function lineChecker() {
 		newImage.setAttribute('id', 'BINGO')
 		newImage.setAttribute('src', 'godkinhead.png');
 		newImage.setAttribute('class', 'bingooverlay');
-		newImage.setAttribute('onclick', "this.remove(); stopConfetti()");
+		newImage.setAttribute('onclick', "this.remove(); stopConfetti(); removeBingoText()");
 		newImage.style.left = canvasLeftCoord + "px";
 		newImage.style.top = canvasTopCoord + "px";
 		newImage.style.opacity = "1";
@@ -213,16 +213,21 @@ function lineChecker() {
 
 		var newDiv = document.createElement("div");
 		newDiv.setAttribute('id', 'BINGOtext');
-		newDiv.setAttribute('class', 'bingooverlay');
-		newImage.style.left = canvasLeftCoord + "px";
-		newImage.style.top = canvasTopCoord + "px";
-		newDiv.style.background = "red";
-		newDiv.style.color = "white";
-		newDiv.innerHTML = "Hello";
+		newDiv.setAttribute('class', 'bingotextoverlay');
+		newDiv.style.left = canvasLeftCoord + "px";
+		newDiv.style.top = canvasTopCoord + "px";
+		newDiv.style.color = "black";
+		newDiv.style.fontSize = "xxx-large";
+		newDiv.innerHTML = "BINGO! <br /> Sapere Aude";
 		document.body.appendChild(newDiv);
 
 		startConfetti();
 	}
+}
+
+function removeBingoText(){
+	const element = document.getElementById("BINGOtext");
+	element.remove();
 }
 
 function displayBingoSheet(itemArray) {
