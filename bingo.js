@@ -72,8 +72,8 @@ function lineChecker() {
 	var diacount1 = 0;
 	var diacount2 = 0;
 
-	var bingobefore = false;
-	var bingoafter = false;
+	var bingobefore = 0;
+	var bingoafter = 0;
 
 	for (i = 0; i < nodeList.length; i++) {
 		stamp_array.push(nodeList[i].id);
@@ -81,7 +81,7 @@ function lineChecker() {
 
 	for (let coord of stamp_array){
 		if (document.getElementById(coord).style.filter == "invert(1)") {
-			bingobefore = true;
+			bingobefore++;
 		}
 	}
 
@@ -193,14 +193,14 @@ function lineChecker() {
 
 	for (let coord of stamp_array){
 		if (document.getElementById(coord).style.filter == "invert(1)") {
-			bingoafter = true;
+			bingoafter++;
 		}
 	}
 
 	console.log("bingobefore value is: " + bingobefore)
 	console.log("bingoafter value is: " + bingoafter)
 
-	if ((bingobefore == false) && (bingoafter == true)) {
+	if ((bingobefore < bingoafter)) {
 		var newImage = document.createElement("img");
 		newImage.setAttribute('id', 'BINGO')
 		newImage.setAttribute('src', 'godkinhead.png');
