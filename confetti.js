@@ -1,6 +1,6 @@
 'use strict';
 
-export function confetti() {
+function confetti() {
   // Globals
   var random = Math.random
     , cos = Math.cos
